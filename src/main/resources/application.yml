@@ -1,0 +1,29 @@
+
+spring:
+  datasource:
+    driver-class-name: 'com.mysql.cj.jdbc.Driver'
+    url: 'jdbc:mysql://localhost:3306/gestionstock?createDatabaseIfNotExist=true&userSSL=false&useUnicode=true&serverTimezone=UTC'
+    password: 'root'
+    username: 'root'
+  jpa:
+    hibernate:
+      # ddl-auto: 'none'
+      ddl-auto: 'update'
+      open-in-view: 'false'
+      show-sql: 'true'
+    properties:
+      hibernate:
+        dialect: 'org.hibernate.dialect.MySQL8Dialect'
+        format_sql: 'true'
+      jdbc:
+        time_zone: 'UTC'
+
+server:
+  port: 8086
+logger:
+  org:
+    hibernate:
+      dialect:
+        function:
+          TemplateRenderer:
+            level: 'ERR'
