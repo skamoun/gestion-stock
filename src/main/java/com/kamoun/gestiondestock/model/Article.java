@@ -15,9 +15,9 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Table(name = "article")
 public class Article extends AbstractEntity{
-    private final static String CATEGORY_JOIN_COLUMN="_article" + "_category_id";
+    private final static String CATEGORY_JOIN_COLUMN="_id_category";
     @Column(name = "_code")
-    private String codeArticle;
+    private String code;
     @Column(name = "_designation")
     private String designation;
     @Column(name = "_prix_unit_ht")

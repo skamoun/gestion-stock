@@ -20,7 +20,7 @@ import java.util.Collection;
 @Table(name = "category")
 public class Category extends AbstractEntity{
     @Column(name = "_code")
-    private String codeCategory;
+    private String code;
     @Column(name = "_designation")
     private String designation;
 
