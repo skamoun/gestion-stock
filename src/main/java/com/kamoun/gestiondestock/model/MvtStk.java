@@ -1,15 +1,14 @@
 package com.kamoun.gestiondestock.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @Entity
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "mvt_stock")
@@ -18,4 +17,7 @@ public class MvtStk extends AbstractEntity{
     @ManyToOne
     @JoinColumn(name = ARTICLE_JOIN_COLUMN)
     private Article article ;
+    @Column(name = "_type_mvt_stock")
+    @Enumerated(EnumType.STRING)
+    private TypeMvtStock typeMvtStock;
 }
