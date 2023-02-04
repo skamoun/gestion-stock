@@ -21,5 +21,5 @@ public class ArticleDto {
     private BigDecimal prixUnitTtc;
 
     private String photo;
-    private String category;
+    private CategoryDto category;
 }
