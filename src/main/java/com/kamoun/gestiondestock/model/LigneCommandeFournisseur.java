@@ -1,13 +1,12 @@
 package com.kamoun.gestiondestock.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.math.BigDecimal;
 
 @Data
 @Builder
@@ -24,4 +23,8 @@ public class LigneCommandeFournisseur extends AbstractEntity {
     @ManyToOne
     @JoinColumn(name = COMMANDE_FOURNISSEUR_JOIN_COLUMN)
     private CommandeFournisseur commandeFournisseur;
+    @Column(name = "_prix_unit")
+    private BigDecimal prixUnit;
+    @Column(name = "_quantite")
+    private BigDecimal quantite;
 }

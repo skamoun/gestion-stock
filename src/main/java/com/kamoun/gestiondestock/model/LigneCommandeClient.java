@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 @Data
 @Entity
 @Builder
@@ -21,4 +23,8 @@ public class LigneCommandeClient extends AbstractEntity{
     @ManyToOne
     @JoinColumn(name = COMMANDE_CLIENT_JOIN_COLUMN)
     private CommandeClient commandeClient;
+    @Column(name = "_prix_unit")
+    private BigDecimal prixUnit;
+    @Column(name = "_quantite")
+    private BigDecimal quantite;
 }

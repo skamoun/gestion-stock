@@ -14,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "utilisateurs")
-public class Utilisateurs extends AbstractEntity{
+public class Utilisateur extends AbstractEntity{
     private static final String ENTREPRISE_JOIN_COLUMN = "_id_entreprise";
     @Column(name = "_nom")
     private String nom;

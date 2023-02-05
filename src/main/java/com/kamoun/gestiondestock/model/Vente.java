@@ -16,7 +16,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "ventes")
-public class Ventes extends AbstractEntity{
+public class Vente extends AbstractEntity{
     @Column(name = "_code")
     private String code;
     @Column(name = "_date_vente")
