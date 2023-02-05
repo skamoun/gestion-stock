@@ -1,8 +1,6 @@
 package com.kamoun.gestiondestock.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,6 +13,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Table(name = "roles")
 public class Roles  extends AbstractEntity{
-    @Column(name = "_nom")
-    private String nom;
+    private static final String USER_JOIN_COLUMN = "_id_utilisateur";
+    @Column(name = "_role_name")
+    private String roleName;
+
+@ManyToOne
+@JoinColumn( name = USER_JOIN_COLUMN)
+    private Utilisateur utilisateur;
 }
