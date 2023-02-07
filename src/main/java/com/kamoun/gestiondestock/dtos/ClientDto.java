@@ -13,6 +13,8 @@ import java.util.List;
 @Builder
 
 public class ClientDto {
+    private Integer id ;
+
 
     private String nom;
 

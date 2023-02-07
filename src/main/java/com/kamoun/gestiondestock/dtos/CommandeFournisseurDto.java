@@ -15,6 +15,8 @@ import java.util.List;
 @Builder
 
 public class CommandeFournisseurDto {
+    private Integer id ;
+
     @Column(name = "_code")
     private String code;
     @Column(name = "_date_commande")

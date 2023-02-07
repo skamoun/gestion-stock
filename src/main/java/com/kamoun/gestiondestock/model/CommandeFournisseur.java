@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.Instant;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -20,7 +21,7 @@ public class CommandeFournisseur extends AbstractEntity{
     @Column(name = "_code")
     private String code;
     @Column(name = "_date_commande")
-    private LocalDate dateCommande;
+    private Instant dateCommande;
     @ManyToOne()
     @JoinColumn(name = FOURNISSEUR_JOIN_COLUMN)
     private Fournisseur fournisseur;

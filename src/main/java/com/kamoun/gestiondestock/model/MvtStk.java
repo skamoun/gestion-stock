@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.Instant;
 import java.time.LocalDate;
 
 @Data
@@ -19,7 +20,7 @@ public class MvtStk extends AbstractEntity{
     @Column(name = "_quantite")
     private String quantite;
     @Column(name = "_date_mvt")
-    private LocalDate dateMvt;
+    private Instant dateMvt;
     @ManyToOne
     @JoinColumn(name = ARTICLE_JOIN_COLUMN)
     private Article article ;

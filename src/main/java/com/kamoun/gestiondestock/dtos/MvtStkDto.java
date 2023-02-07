@@ -6,14 +6,17 @@ import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Data;
 
+import java.time.Instant;
 import java.time.LocalDate;
 @Data
 @Builder
 
 public class MvtStkDto {
+    private Integer id ;
+
     private String quantite;
 
-    private LocalDate dateMvt;
+    private Instant dateMvt;
 
     private ArticleDto article ;
 

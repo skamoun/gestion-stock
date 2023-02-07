@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.Instant;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -19,7 +20,7 @@ public class CommandeClient extends AbstractEntity{
     private static final String CLIENT_JOIN_COLUMN ="_id_client";
     private String code;
 
-    private LocalDate dateCommande;
+    private Instant dateCommande;
     @ManyToOne
     @JoinColumn(name = CLIENT_JOIN_COLUMN)
     private Client client;
