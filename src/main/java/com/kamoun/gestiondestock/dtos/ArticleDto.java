@@ -1,5 +1,7 @@
 package com.kamoun.gestiondestock.dtos;
 
+import com.kamoun.gestiondestock.model.Adresse;
+import com.kamoun.gestiondestock.model.Article;
 import jakarta.persistence.Column;
 import lombok.Builder;
 import lombok.Data;
@@ -22,4 +24,39 @@ private Integer id ;
 
     private String photo;
     private CategoryDto category;
+
+
+    public ArticleDto  fromEntity(Article article){
+        if(article==null){
+            // TODO throw an exception
+            return null;
+        }
+        return  ArticleDto.builder()
+                .id(article.getId())
+                .code(article.getCode())
+                .designation(article.getDesignation())
+                .photo(article.getPhoto())
+                .prixUnitHt(article.getPrixUnitHt())
+                .prixUnitTtc(article.getPrixUnitTtc())
+                .tauxTva(article.getTauxTva())
+                .build();
+    }
+
+    public Article  toEntity(ArticleDto articleDto){
+        if(articleDto==null){
+            // TODO throw an exception
+            return null;
+        }
+        Article article = new Article();
+        article.setId(articleDto.getId());
+        article.setCode(articleDto.getCode());
+        article.setDesignation(articleDto.getDesignation());
+        article.setPrixUnitHt(articleDto.getPrixUnitHt());
+        article.setPrixUnitTtc(articleDto.getPrixUnitTtc());
+        article.setPrixUnitHt(articleDto.getPrixUnitHt());
+        article.setPhoto(articleDto.getPhoto());
+        article.setTauxTva(articleDto.tauxTva);
+
+        return  article;
+    }
 }
