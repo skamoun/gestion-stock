@@ -18,9 +18,9 @@ public class Entreprise extends AbstractEntity{
     @Column(name = "_nom")
     private String nom;
     @Column(name = "_description")
-    private String _description;
+    private String description;
     @Column(name = "_code_fiscal")
-    private String _codeFiscal;
+    private String codeFiscal;
     @Column(name = "_email")
     private String mail;
     @Embedded

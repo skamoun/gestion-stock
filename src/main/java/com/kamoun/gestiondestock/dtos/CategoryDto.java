@@ -40,9 +40,9 @@ public class CategoryDto {
             return null;
         }
         Category category = new Category();
-        category.setId(categoryDto.getId());
-        category.setCode(categoryDto.getCode());
-        category.setDesignation(categoryDto.getDesignation());
+        category.setId(categoryDto.id);
+        category.setCode(categoryDto.code);
+        category.setDesignation(categoryDto.designation);
     return  category;
     }
 }

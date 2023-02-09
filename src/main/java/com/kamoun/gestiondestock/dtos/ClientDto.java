@@ -33,7 +33,7 @@ public class ClientDto {
     private List<CommandeClientDto> commandeClients;
 
 
-    public ClientDto  fromEntity(Client client){
+    public static ClientDto  fromEntity(Client client){
         if(client==null){
             // TODO throw an exception
             return null;
@@ -43,22 +43,22 @@ public class ClientDto {
                 .mail(client.getMail())
                 .nom(client.getNom())
                 .photo(client.getPhoto())
-                .prenom(client.getMail())
+                .prenom(client.getPrenom())
                 .numTel(client.getNumTel())
                 .build();
     }
 
-    public Client  toEntity(ClientDto clientDto){
+    public static  Client  toEntity(ClientDto clientDto){
         if(clientDto==null){
             // TODO throw an exception
             return null;
         }
         Client client = new Client();
-        client.setId(clientDto.getId());
-        client.setNom(clientDto.getNom());
-        client.setPrenom(clientDto.getPrenom());
-        client.setPhoto(clientDto.getPhoto());
-        client.setNumTel(clientDto.getNumTel());
+        client.setId(clientDto.id);
+        client.setNom(clientDto.nom);
+        client.setPrenom(clientDto.prenom);
+        client.setPhoto(clientDto.photo);
+        client.setNumTel(clientDto.numTel);
         client.setMail(clientDto.mail);
 
         return  client;
