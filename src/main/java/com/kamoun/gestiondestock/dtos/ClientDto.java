@@ -1,12 +1,7 @@
 package com.kamoun.gestiondestock.dtos;
 
-import com.kamoun.gestiondestock.model.Adresse;
-import com.kamoun.gestiondestock.model.Article;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.kamoun.gestiondestock.model.Client;
-import com.kamoun.gestiondestock.model.CommandeClient;
-import jakarta.persistence.Column;
-import jakarta.persistence.Embedded;
-import jakarta.persistence.OneToMany;
 import lombok.Builder;
 import lombok.Data;
 
@@ -29,7 +24,7 @@ public class ClientDto {
     private String photo;
 
     private String numTel;
-
+    @JsonIgnore
     private List<CommandeClientDto> commandeClients;
 
 
