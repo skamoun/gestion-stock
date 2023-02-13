@@ -1,10 +1,7 @@
 package com.kamoun.gestiondestock.dtos;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.kamoun.gestiondestock.model.Article;
 import com.kamoun.gestiondestock.model.Category;
-import jakarta.persistence.Column;
-import jakarta.persistence.OneToMany;
 import lombok.Builder;
 import lombok.Data;
 
@@ -22,12 +19,12 @@ public class CategoryDto {
 @JsonIgnore
     private Collection<ArticleDto> articles;
 
-    public CategoryDto  fromEntity(Category category){
-        if(category==null){
+    public static CategoryDto fromEntity(Category category) {
+        if (category == null) {
             // TODO throw an exception
             return null;
         }
-        return  CategoryDto.builder()
+        return CategoryDto.builder()
                 .id(category.getId())
                 .code(category.getCode())
                 .designation(category.getDesignation())

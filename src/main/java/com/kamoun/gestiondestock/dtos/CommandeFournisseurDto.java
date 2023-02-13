@@ -1,18 +1,11 @@
 package com.kamoun.gestiondestock.dtos;
 
-import com.kamoun.gestiondestock.model.CommandeClient;
 import com.kamoun.gestiondestock.model.CommandeFournisseur;
-import com.kamoun.gestiondestock.model.Fournisseur;
-import com.kamoun.gestiondestock.model.LigneCommandeFournisseur;
-import jakarta.persistence.Column;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
+import com.kamoun.gestiondestock.model.EtatCommande;
 import lombok.Builder;
 import lombok.Data;
 
 import java.time.Instant;
-import java.time.LocalDate;
 import java.util.List;
 @Data
 @Builder
@@ -20,12 +13,12 @@ import java.util.List;
 public class CommandeFournisseurDto {
     private Integer id ;
 
-    @Column(name = "_code")
     private String code;
-    @Column(name = "_date_commande")
     private Instant dateCommande;
+    private EtatCommande etatCommande;
 
     private FournisseurDto fournisseur;
+    private Integer idEntreprise;
 
     private List<LigneCommandeFournisseurDto> ligneCommandeFournisseurs;
 

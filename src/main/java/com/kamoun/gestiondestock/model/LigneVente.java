@@ -14,8 +14,9 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "ligne_vente")
-public class LigneVente extends AbstractEntity{
-    private static final String VENTES_JOIN_COLUMN ="_id_ventes" ;
+public class LigneVente extends AbstractEntity {
+    private static final String VENTES_JOIN_COLUMN = "_id_ventes";
+    private static final String ARTICLE_JOIN_COLUMN = "_id_article";
     @ManyToOne
     @JoinColumn(name = VENTES_JOIN_COLUMN)
     private Vente ventes;
@@ -23,4 +24,7 @@ public class LigneVente extends AbstractEntity{
     private BigDecimal quantite;
     @Column(name = "_prix_unit")
     private BigDecimal prixUnit;
+    @ManyToOne
+    @JoinColumn(name = ARTICLE_JOIN_COLUMN)
+    private Article article;
 }

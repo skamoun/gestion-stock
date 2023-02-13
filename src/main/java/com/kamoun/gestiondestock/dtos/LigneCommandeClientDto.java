@@ -1,11 +1,6 @@
 package com.kamoun.gestiondestock.dtos;
 
-import com.kamoun.gestiondestock.model.Article;
-import com.kamoun.gestiondestock.model.CommandeClient;
 import com.kamoun.gestiondestock.model.LigneCommandeClient;
-import jakarta.persistence.Column;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import lombok.Builder;
 import lombok.Data;
 
@@ -35,7 +30,7 @@ public class LigneCommandeClientDto {
                 .id(ligneCommandeClient.getId())
                 .prixUnit(ligneCommandeClient.getPrixUnit())
                 .quantite(ligneCommandeClient.getQuantite())
-
+                .commandeClient(CommandeClientDto.fromEntity(ligneCommandeClient.getCommandeClient()))
                 .build();
     }
 

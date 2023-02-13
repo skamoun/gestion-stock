@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -26,8 +27,24 @@ public class Article extends AbstractEntity{
     private BigDecimal prixUnitTtc;
     @Column(name = "_photo")
     private String photo;
+    @Column(name = "_id_entreprise")
+    private Integer idEntreprise;
+
 
     @ManyToOne
     @JoinColumn(name = CATEGORY_JOIN_COLUMN)
     private Category category;
+
+
+    @OneToMany(mappedBy = "article")
+    private List<LigneVente> ligneVentes;
+
+    @OneToMany(mappedBy = "article")
+    private List<LigneCommandeClient> ligneCommandeClients;
+
+    @OneToMany(mappedBy = "article")
+    private List<LigneCommandeFournisseur> ligneCommandeFournisseurs;
+
+    @OneToMany(mappedBy = "article")
+    private List<MvtStk> mvtStks;
 }
