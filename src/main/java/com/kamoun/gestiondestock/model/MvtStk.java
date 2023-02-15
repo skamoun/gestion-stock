@@ -6,8 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.time.Instant;
-import java.time.LocalDate;
 
 @Data
 @Entity
@@ -18,7 +18,7 @@ import java.time.LocalDate;
 public class MvtStk extends AbstractEntity{
     private static final String ARTICLE_JOIN_COLUMN = "_id_article";
     @Column(name = "_quantite")
-    private String quantite;
+    private BigDecimal quantite;
     @Column(name = "_date_mvt")
     private Instant dateMvt;
     @ManyToOne
