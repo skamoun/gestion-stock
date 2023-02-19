@@ -25,8 +25,8 @@ private Integer id ;
     private CategoryDto category;
 
 
-    public ArticleDto  fromEntity(Article article){
-        if(article==null){
+    public static ArticleDto fromEntity(Article article) {
+        if (article == null) {
             // TODO throw an exception
             return null;
         }
@@ -43,8 +43,8 @@ private Integer id ;
                 .build();
     }
 
-    public Article  toEntity(ArticleDto articleDto){
-        if(articleDto==null){
+    public static Article toEntity(ArticleDto articleDto) {
+        if (articleDto == null) {
             // TODO throw an exception
             return null;
         }
