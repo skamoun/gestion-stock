@@ -31,8 +31,8 @@ public class CategoryDto {
                 .build();
     }
 
-    public Category  toEntity(CategoryDto categoryDto){
-        if(categoryDto==null){
+    public static Category toEntity(CategoryDto categoryDto) {
+        if (categoryDto == null) {
             // TODO throw an exception
             return null;
         }
@@ -40,6 +40,6 @@ public class CategoryDto {
         category.setId(categoryDto.id);
         category.setCode(categoryDto.code);
         category.setDesignation(categoryDto.designation);
-    return  category;
+        return category;
     }
 }

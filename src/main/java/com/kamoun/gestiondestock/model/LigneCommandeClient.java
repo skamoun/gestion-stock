@@ -19,7 +19,7 @@ public class LigneCommandeClient extends AbstractEntity{
     private static final String COMMANDE_CLIENT_JOIN_COLUMN = "_id_commande_client";
     @ManyToOne
     @JoinColumn(name = ARTICLE_JOIN_COLUMN)
-    private Article article ;
+    private Article article;
     @ManyToOne
     @JoinColumn(name = COMMANDE_CLIENT_JOIN_COLUMN)
     private CommandeClient commandeClient;
@@ -27,5 +27,7 @@ public class LigneCommandeClient extends AbstractEntity{
     private BigDecimal prixUnit;
     @Column(name = "_quantite")
     private BigDecimal quantite;
+    @Column(name = "_id_entreprise")
+    private Integer idEntreprise;
 
 }

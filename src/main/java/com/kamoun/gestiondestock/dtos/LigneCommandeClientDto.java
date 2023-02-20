@@ -1,5 +1,6 @@
 package com.kamoun.gestiondestock.dtos;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.kamoun.gestiondestock.model.LigneCommandeClient;
 import lombok.Builder;
 import lombok.Data;
@@ -13,14 +14,15 @@ public class LigneCommandeClientDto {
     private Integer id ;
 
 
-
+    @JsonIgnore
     private ArticleDto article ;
-
+    @JsonIgnore
     private CommandeClientDto commandeClient;
 
     private BigDecimal prixUnit;
 
     private BigDecimal quantite;
+    private Integer idEntreprise;
     public static LigneCommandeClientDto  fromEntity(LigneCommandeClient ligneCommandeClient){
         if(ligneCommandeClient==null){
             // TODO throw an exception

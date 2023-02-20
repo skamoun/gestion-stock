@@ -24,6 +24,7 @@ public class CommandeClientDto {
 
     private Integer idEntreprise;
 
+
     private List<LigneCommandeClientDto> ligneCommandeClients;
 
     public static CommandeClientDto fromEntity(CommandeClient commandeClient) {
@@ -37,8 +38,6 @@ public class CommandeClientDto {
                 .code(commandeClient.getCode())
                 .idEntreprise(commandeClient.getIdEntreprise())
                 .client(ClientDto.fromEntity(commandeClient.getClient()))
-                .ligneCommandeClients(commandeClient.getLigneCommandeClients().stream()
-                        .map(LigneCommandeClientDto::fromEntity).toList())
                 .build();
     }
 

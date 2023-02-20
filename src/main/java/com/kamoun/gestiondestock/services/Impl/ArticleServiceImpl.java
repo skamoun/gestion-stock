@@ -12,6 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @Slf4j
@@ -47,16 +48,23 @@ public class ArticleServiceImpl implements ArticleService {
         }
         return ArticleDto.fromEntity(articleRepository.findByCode(code)
                 .orElseThrow(() ->
-                        new EntityNotFoundException("l'article avec le  " + code + "n'a pas été trouve", ErrorCodes.ARTICLE_NOT_FOUND)));
+                        new EntityNotFoundException("l'article avec le  " + code + "n'a pas été trouve",
+                                ErrorCodes.ARTICLE_NOT_FOUND)));
     }
 
     @Override
     public List<ArticleDto> findAll() {
-        return null;
+        return articleRepository.findAll().stream()
+                .map(ArticleDto::fromEntity)
+                .collect(Collectors.toList());
     }
 
     @Override
     public void delete(Integer id) {
-
+        if (id == null) {
+            log.error("Article ID is null");
+            return;
+        }
+        articleRepository.deleteById(id);
     }
 }
