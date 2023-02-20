@@ -31,7 +31,6 @@ public class CommandeFournisseurDto {
                 .id(commandeFournisseur.getId())
                 .dateCommande(commandeFournisseur.getDateCommande())
                 .code(commandeFournisseur.getCode())
-
                 .build();
     }
 

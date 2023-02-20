@@ -57,6 +57,7 @@ public class ArticleDto {
         article.setPrixUnitHt(articleDto.getPrixUnitHt());
         article.setPhoto(articleDto.getPhoto());
         article.setTauxTva(articleDto.tauxTva);
+        article.setIdEntreprise(articleDto.getIdEntreprise());
 
         return  article;
     }
