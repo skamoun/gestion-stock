@@ -1,8 +1,6 @@
 package com.kamoun.gestiondestock.dtos;
 
-import com.kamoun.gestiondestock.model.LigneCommandeFournisseur;
 import com.kamoun.gestiondestock.model.LigneVente;
-import jakarta.persistence.Column;
 import lombok.Builder;
 import lombok.Data;
 
@@ -11,16 +9,17 @@ import java.math.BigDecimal;
 @Builder
 @Data
 public class LigneVenteDto {
-    private Integer id ;
+    private Integer id;
 
     private VenteDto ventes;
-    @Column(name = "_quantite")
+    private ArticleDto article;
+
     private BigDecimal quantite;
-    @Column(name = "_prix_unit")
+
     private BigDecimal prixUnit;
 
-    public static LigneVenteDto  fromEntity(LigneVente ligneVente){
-        if(ligneVente==null){
+    public static LigneVenteDto fromEntity(LigneVente ligneVente) {
+        if (ligneVente == null) {
             // TODO throw an exception
             return null;
         }

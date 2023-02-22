@@ -32,7 +32,6 @@ public class LigneCommandeClientDto {
                 .id(ligneCommandeClient.getId())
                 .prixUnit(ligneCommandeClient.getPrixUnit())
                 .quantite(ligneCommandeClient.getQuantite())
-                .commandeClient(CommandeClientDto.fromEntity(ligneCommandeClient.getCommandeClient()))
                 .build();
     }
 

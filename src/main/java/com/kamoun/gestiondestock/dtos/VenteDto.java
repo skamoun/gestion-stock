@@ -1,24 +1,24 @@
 package com.kamoun.gestiondestock.dtos;
 
-import com.kamoun.gestiondestock.model.LigneVente;
 import com.kamoun.gestiondestock.model.Vente;
-import jakarta.persistence.Column;
 import lombok.Builder;
 import lombok.Data;
 
 import java.time.Instant;
-import java.time.LocalDate;
+import java.util.List;
+
 @Data
 @Builder
 
 public class VenteDto {
-    private Integer id ;
+    private Integer id;
 
     private String code;
 
     private Instant dateVente;
 
     private String commentaire;
+    private List<LigneVenteDto> ligneVentes;
 
     public static VenteDto  fromEntity(Vente vente){
         if(vente==null){

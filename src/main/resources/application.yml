@@ -27,3 +27,6 @@ logger:
         function:
           TemplateRenderer:
             level: 'ERR'
+flicker:
+  apiKey: 'c2245a206e38b86664249bfd2a5034ca'
+  apiSecret: '004fa61215b7a40e'
