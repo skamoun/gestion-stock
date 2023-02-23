@@ -30,6 +30,6 @@ public class CommandeClient extends AbstractEntity {
     @ManyToOne
     @JoinColumn(name = CLIENT_JOIN_COLUMN)
     private Client client;
-    @OneToMany(mappedBy = "commandClient")
+    @OneToMany(mappedBy = "commandeClient")
     private List<LigneCommandeClient> ligneCommandeClients;
 }

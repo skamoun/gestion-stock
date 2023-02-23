@@ -1,6 +1,10 @@
 package com.kamoun.gestiondestock.controller.api;
 
 import com.kamoun.gestiondestock.dtos.ArticleDto;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,19 +15,45 @@ import java.util.List;
 
 import static com.kamoun.gestiondestock.utils.Constants.APP_ROOT;
 
+@Api(APP_ROOT + "articles")
 public interface ArticleApi {
     @PostMapping(value = APP_ROOT + "articles/create", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Enregistrer un article", notes = "Cette methode permet d'enregistrer ou modifier un article", response = ArticleDto.class)
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "L'objet article cree / modifie"),
+            @ApiResponse(code = 400, message = "L'objet article n'est pas valide")
+    })
     ArticleDto save(@RequestBody ArticleDto articleDto);
 
     @GetMapping(value = APP_ROOT + "articles/{idArticle}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Recherche d' un article", notes = "Cette methode permet de chercher un article par ID", response = ArticleDto.class)
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "L'article a été trouvé dans la BDD"),
+            @ApiResponse(code = 404, message = "L'article  avec l'id fourni n'a pas été trouvé dans la BDD")
+    })
     ArticleDto findById(@PathVariable("idArticle") Integer id);
 
     @GetMapping(value = APP_ROOT + "articles/{codeArticle}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Rechercher un article par CODE", notes = "Cette methode permet de chercher un article par son CODE", response =
+            ArticleDto.class)
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "L'article a ete trouve dans la BDD"),
+            @ApiResponse(code = 404, message = "Aucun article n'existe dans la BDD avec le CODE fourni")
+    })
     ArticleDto findByCode(@PathVariable("codeArticle") String code);
 
     @GetMapping(value = APP_ROOT + "articles/all", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Renvoi la liste des articles", notes = "Cette methode permet de chercher et renvoyer la liste des articles qui existent "
+            + "dans la BDD", responseContainer = "List<ArticleDto>")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "La liste des article / Une liste vide")
+    })
     List<ArticleDto> findAll();
 
     @GetMapping(value = APP_ROOT + "articles/delete/{idArticle}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Supprimer un article", notes = "Cette methode permet de supprimer un article par ID")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "L'article a ete supprime")
+    })
     void delete(@PathVariable("idArticle") Integer id);
 }

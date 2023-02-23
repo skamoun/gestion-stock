@@ -2,7 +2,7 @@
 spring:
   datasource:
     driver-class-name: 'com.mysql.cj.jdbc.Driver'
-    url: 'jdbc:mysql://localhost:3306/gestionstock?createDatabaseIfNotExist=true&userSSL=false&useUnicode=true&serverTimezone=UTC'
+    url: 'jdbc:mysql://localhost:3306/gestionstock?createDatabaseIfNotExist=true&userSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC'
     password: 'root'
     username: 'root'
   jpa:
@@ -30,3 +30,5 @@ logger:
 flicker:
   apiKey: 'c2245a206e38b86664249bfd2a5034ca'
   apiSecret: '004fa61215b7a40e'
+  appKey: '72157720874338642-39d2d25b04cd899e'
+  appSecret: 'f054f7000dde440a'

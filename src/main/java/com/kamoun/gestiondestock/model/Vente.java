@@ -17,7 +17,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "ventes")
+@Table(name = "vente")
 public class Vente extends AbstractEntity {
     @Column(name = "_code")
     private String code;

@@ -15,7 +15,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Table(name = "ligne_vente")
 public class LigneVente extends AbstractEntity {
-    private static final String VENTES_JOIN_COLUMN = "_id_ventes";
+    private static final String VENTES_JOIN_COLUMN = "_id_vente";
     private static final String ARTICLE_JOIN_COLUMN = "_id_article";
     @ManyToOne
     @JoinColumn(name = VENTES_JOIN_COLUMN)

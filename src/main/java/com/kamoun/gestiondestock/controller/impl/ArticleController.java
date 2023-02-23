@@ -1,5 +1,6 @@
-package com.kamoun.gestiondestock.controller.api;
+package com.kamoun.gestiondestock.controller.impl;
 
+import com.kamoun.gestiondestock.controller.api.ArticleApi;
 import com.kamoun.gestiondestock.dtos.ArticleDto;
 import com.kamoun.gestiondestock.services.ArticleService;
 import lombok.AllArgsConstructor;

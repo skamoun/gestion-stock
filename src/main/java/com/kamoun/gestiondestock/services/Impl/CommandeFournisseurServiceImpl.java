@@ -117,7 +117,7 @@ public class CommandeFournisseurServiceImpl implements CommandeFournisseurServic
             log.error("Commande fournisseur CODE is NULL");
             return null;
         }
-        return commandeFournisseurRepository.findCommandeFournisseurByCode(code)
+        return commandeFournisseurRepository.findByCode(code)
                 .map(CommandeFournisseurDto::fromEntity)
                 .orElseThrow(() -> new EntityNotFoundException(
                         "Aucune commande fournisseur n'a ete trouve avec le CODE " + code, ErrorCodes.COMMANDE_FOURNISSEUR_NOT_FOUND
