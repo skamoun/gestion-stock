@@ -4,14 +4,13 @@ import com.flickr4java.flickr.Flickr;
 import com.flickr4java.flickr.FlickrException;
 import com.flickr4java.flickr.uploader.UploadMetaData;
 import com.kamoun.gestiondestock.services.FlickrService;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.InputStream;
 
 @Service
-@AllArgsConstructor
+
 public class FlickrServiceImpl implements FlickrService {
     private final Flickr flickr;
     @Value("${flicker.apikey}")
@@ -22,6 +21,10 @@ public class FlickrServiceImpl implements FlickrService {
     private String appKey;
     @Value("${flicker.appSecret}")
     private String appSecret;
+
+    public FlickrServiceImpl(Flickr flickr) {
+        this.flickr = flickr;
+    }
 
     @Override
     public String savePhoto(InputStream photo, String titre) throws FlickrException {
