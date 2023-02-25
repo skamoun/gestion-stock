@@ -2,7 +2,7 @@
 spring:
   datasource:
     driver-class-name: 'com.mysql.cj.jdbc.Driver'
-    url: 'jdbc:mysql://localhost:3306/gestionstock?createDatabaseIfNotExist=true&userSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC'
+    url: 'jdbc:mysql://localhost:3306/gestionstock?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC'
     password: 'root'
     username: 'root'
   jpa:
@@ -20,7 +20,6 @@ spring:
 
 server:
   port: 8086
-logger:
   org:
     hibernate:
       dialect:

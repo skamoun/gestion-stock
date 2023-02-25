@@ -10,7 +10,7 @@ import java.util.Optional;
 public interface UtilisateurRepository extends JpaRepository<Utilisateur, Integer> {
 
     // JPQL query
-    @Query(value = "select u from Utilisateur u where u.email = :email")
+    @Query(value = "select u from Utilisateur u where u.mail = :email")
     Optional<Utilisateur> findByMail(@Param("email") String email);
 
 }
