@@ -10,8 +10,9 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 
 @EnableSwagger2
-public class SwaggerConfiguration {
 
+
+public class SwaggerConfiguration {
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
@@ -22,7 +23,7 @@ public class SwaggerConfiguration {
                                 .build()
                 )
                 .groupName("REST API V1")
-                .useDefaultResponseMessages(false)
+                // .useDefaultResponseMessages(false)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.kamoun.gestiondestock"))
                 .paths(PathSelectors.any())

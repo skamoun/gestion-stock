@@ -50,7 +50,7 @@ public interface CategoryApi {
     @DeleteMapping(value = APP_ROOT + "/categories/delete/{idCategory}")
     @ApiOperation(value = "Supprimer un article", notes = "Cette methode permet de supprimer une categorie par ID")
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "La categorie a ete supprime")
+            @ApiResponse(code = 200, message = "La categorie a ete supprimé")
     })
     void delete(@PathVariable("idCategory") Integer id);
 }
